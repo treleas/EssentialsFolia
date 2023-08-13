@@ -31,7 +31,7 @@ public class Commandweather extends EssentialsCommand {
             isStorm = args[0].equalsIgnoreCase("storm");
         }
 
-        ess.scheduleEntityDelayedTask(user.getBase(), () -> {
+        ess.ensureGlobal(() -> {
             final World world = user.getWorld();
 
             if (args.length > 1) {
